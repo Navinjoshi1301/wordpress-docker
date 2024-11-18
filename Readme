@@ -1,0 +1,2 @@
+docker run --rm -v db_data:/volume -v D:\wordpress-docker\backup:/backup alpine tar -czf /backup/db_data.tar.gz /volume
+docker run --rm -v wordpress_data:/volume -v D:\wordpress-docker\backup:/backup alpine tar -czf /backup/wordpress_data.tar.gz /volume
