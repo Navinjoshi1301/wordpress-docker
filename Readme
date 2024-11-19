@@ -1,2 +1,9 @@
-docker run --rm -v db_data:/volume -v D:\wordpress-docker\backup:/backup alpine tar -czf /backup/db_data.tar.gz /volume
-docker run --rm -v wordpress_data:/volume -v D:\wordpress-docker\backup:/backup alpine tar -czf /backup/wordpress_data.tar.gz /volume
+#  step 1
+ docker build -t localwordpress:v1 .
+
+
+
+docker run -d   --name custom-wordpress   -p 8080:80  localwordpress:v1
+
+docker tag localwordpress:v1 navin13121/wordpress_web:v2
+docker push navin13121/wordpress_web:v2
